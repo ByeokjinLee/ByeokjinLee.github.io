@@ -23,6 +23,12 @@
             height: 400px;
             object-fit: cover;
         }
+        .seeun-pic {
+            border-radius: 0%;
+            width: 700px;
+            height: 400px;
+            object-fit: cover;
+        }
         h1 {
             font-size: 2em;
             color: #333;
@@ -31,7 +37,51 @@
             color: #666;
             line-height: 1.6;
         }
+
     </style>
+    <script>
+        function showResultImage() {
+            document.getElementById("seeun-pic").src = "images/grace_result.png";
+            document.getElementById("seeun-text").innerText = "이렇게 다쳐서 깁스를 했습니다"; // 텍스트 변경
+        }
+
+        function showXrayImage() {
+            document.getElementById("seeun-pic").src = "images/xray.png";
+            document.getElementById("seeun-text").innerText = "어이구 X-ray로 보니 많이 아파보여요 ㅠㅠ"; // 텍스트 변경
+        }
+
+        function showHelmetImage() {
+            document.getElementById("seeun-pic").src = "images/helmet.png";
+            document.getElementById("seeun-text").innerText = "헬멧을 꼭 쓰자구요"; // 텍스트 변경
+        }
+
+        function showBoxerImage() {
+            document.getElementById("seeun-pic").src = "images/boxer.png";
+            document.getElementById("seeun-text").innerText = "헬멧 안 쓰면 죽빵 맞습니다"; // 텍스트 변경
+        }
+
+        function showGraceImage() {
+            document.getElementById("seeun-pic").src = "images/grace_profile.png";
+            document.getElementById("seeun-text").innerText = "세은 박."; // 텍스트 원래대로
+
+        }
+
+        window.onload = function() {
+            const story1 = document.getElementById("story1");
+            story1.addEventListener("mouseover", showResultImage);
+            story1.addEventListener("mouseout", showGraceImage);
+            const story2 = document.getElementById("story2");
+            story2.addEventListener("mouseover", showXrayImage);
+            story2.addEventListener("mouseout", showGraceImage);
+            const story3 = document.getElementById("story3");
+            story3.addEventListener("mouseover", showHelmetImage);
+            story3.addEventListener("mouseout", showGraceImage);
+            const story4 = document.getElementById("story4");
+            story4.addEventListener("mouseover", showBoxerImage);
+            story4.addEventListener("mouseout", showGraceImage);
+        }
+    </script>
+        
 </head>
 <body>
     <div class="container">
@@ -45,6 +95,19 @@
         <audio src="images/madison_fullname.mp3" controls autoplay loop></audio>
         <p>Hi! I'm Yeonwoo Madison Kim, the Gam-sung boxer and the romantic ballader.</p>
         <p>I like dancing and singing. I will do a busking in next week.</p>
+        <hr>
+        <p>BTW... I want to tell you a sad story about Grace</p>
+        <img id="seeun-pic" src="images/grace_profile.png" alt="Grace's Photo" class="seeun-pic">
+        <div id="seeun-text">세은 박</div>
+        <h1>See un Grace</h1>
+        <p>the shoulder breaker and kickboard master, Park</p>
+        <audio src="images/grace_fullname.mp3" controls loop></audio>
+        <p>
+            <span id="story1">Story 1 </span>
+            <span id="story2">Story 2</span>
+            <span id="story3">Story 3</span>
+            <span id="story4">Story 4</span>
+        </p>
     </div>
 </body>
 </html>
